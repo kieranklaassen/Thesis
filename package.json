@@ -1,0 +1,12 @@
+{
+  "name": "thesis",
+  "version": "0.0.1",
+  "description": "Compositional tool",
+  "main": "src/index.js",
+  "repository": "git@github.com:kieranklaassen/Thesis.git",
+  "author": "Kieran Klaassen <kieranklaassen@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "bili": "^3.4.2"
+  }
+}
