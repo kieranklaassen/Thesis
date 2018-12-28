@@ -1,43 +1,42 @@
-(function() {
-  var Thesis, Toon;
+class Thesis {
+  constructor() {
+    this.scalestart = 24; // 24 = C1
+    this.scale = [0,2,4,5,7,9,11]; // Major
 
-  Thesis = (function() {
-
-    function Thesis() {
-      this.toonsoort = [0, 2, 4, 5, 7, 9, 11];
-      this.middentoon = 60;
+    this.keyboard = [];
+    for (let i = this.scalestart; i < 12; i++) {
+      this.keyboard = [...this.keyboard, ...this.scale.map(note => note + i * 12)];
     }
 
-    return Thesis;
+    this.noteIndex = null;
+    this.centerNoteIndex = null;
+  }
 
-  })();
-
-  Toon = (function() {
-
-    function Toon() {
-      this.toon1 = 0;
-      this.toon2 = 0;
-      this.middentoon = 0;
+  setCenterNote(number) {
+    if (this.keyboard.includes(number)) {
+      this.noteIndex = this.keyboard.indexOf(number);
+    } else {
+      // Out of range, do we get another? up or down?
+      console.log(`MIDI note ${number} is not part of scale`);
     }
+  }
 
-    Toon.prototype.spiegel = function() {
-      return (verschil() * -1) + this.middentoon;
-    };
+  noteIn(number) {
+    if (this.keyboard.includes(number)) {
+      this.noteIndex = this.keyboard.indexOf(number);
+    } else {
+      // Out of range, do we get another? up or down?
+      console.log(`MIDI note ${number} is not part of scale`);
+    }
+  }
 
-    Toon.prototype.midden = function() {
-      return this.middentoon - (verschil() / 2);
-    };
+  mirrorNoteOut() {
+    return 4;
+  }
 
-    Toon.prototype.spiegelMidden = function() {
-      return this.middentoon + (verschil() / 2);
-    };
+  centerNoteOut() {
+    return 4;
+  }
+}
 
-    Toon.prototype.verschil = function() {
-      return this.toon1 - this.middentoon;
-    };
-
-    return Toon;
-
-  })();
-
-}).call(this);
+export default Thesis;
