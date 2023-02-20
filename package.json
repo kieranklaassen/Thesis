@@ -6,7 +6,12 @@
   "repository": "git@github.com:kieranklaassen/Thesis.git",
   "author": "Kieran Klaassen <kieranklaassen@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
-    "bili": "^3.4.2"
+  "scripts": {
+    "start": "node src/midi.js"
+  },
+  "dependencies": {
+    "midi": "^1.0.0",
+    "tonal": "^4.14.0",
+    "tone": "^14.7.77"
   }
 }
