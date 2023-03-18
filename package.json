@@ -7,11 +7,18 @@
   "author": "Kieran Klaassen <kieranklaassen@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node src/midi.js"
+    "start": "node src/midi.js",
+    "test": "jest"
   },
   "dependencies": {
     "midi": "^1.0.0",
     "tonal": "^4.14.0",
     "tone": "^14.7.77"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "babel-jest": "^29.4.3",
+    "jest": "^29.4.3"
   }
 }

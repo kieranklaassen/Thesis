@@ -32,7 +32,7 @@ class Thesis {
     const invertedInterval = Note.interval(this.centerNote, interval);
 
     // Make sure it's in the scale
-    const invertedNote = Note.transpose(this.centerNote, invertedInterval);
+    // TODO: this is not working
 
     // Return the midi number
     return invertedNote;
@@ -47,7 +47,8 @@ class Thesis {
     // Add te half interval to the center note
     const middleNote = Note.transpose(this.centerNote, halfInterval);
     // Make sure it's in the scale
-    const middleNoteInScale = Note.transpose(this.centerNote, middleNote);
+    // TODO: this is not working
+
     // Return the midi number
     return middleNoteInScale;
   }
@@ -63,7 +64,8 @@ class Thesis {
     // Add te half interval to the center note
     const middleNote = Note.transpose(this.centerNote, invertedHalfInterval);
     // Make sure it's in the scale
-    const middleNoteInScale = Note.transpose(this.centerNote, middleNote);
+    // TODO: this is not working
+
     // Return the midi number
     return middleNoteInScale;
   }
